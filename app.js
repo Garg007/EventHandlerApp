@@ -39,7 +39,8 @@ app.post('/api/event', function(req, res, next){
 		if(err){
 			console.log("Event save error: " + err);
 			res.json({success: false, error: ""+ err});
-		} else {
+		}
+		else {
 			res.json({ success: true, message: 'event created !', event: evt});
 			console.log("suceessss")
         }
@@ -67,7 +68,8 @@ app.post('/api/rsvp', function(req, res, next){
 		if(err){
 			console.log("Event save error: " + err);
 			res.json({success: false, error: ""+ err});
-		} else {
+		}
+		else {
 			res.json({ success: true, message: 'rsvp created !', rsvp: rsvp});
 			console.log("suceessss")
         }
@@ -86,9 +88,7 @@ app.get('/api/events', function(req, res){
 		}
 		else{
 			console.log("getAllEvent Got error: " + err);
-		}
-		
-			
+		}	
 	});
 });
 
