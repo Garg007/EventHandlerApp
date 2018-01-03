@@ -44,21 +44,20 @@ router.post('/login', function(req, res, next){
 		if(!user){
 			console.log("error" + err);
 			res.json({success: false, message: "User Not Found!"});	
-			}
+		}
 		else if(user){
+			var validPassword = user.comparePassword(req.body.password);
 
-            var validPassword = user.comparePassword(req.body.password);
-			
-			if(!validPassword) {
-                res.status(403).json({ success: false, message: 'Invalid Password !'});
-            }
-            else{
-            	console.log("user" + user);
-            	var token = tokenMaker.createUserToken(user);
-            	res.json({success: true, message: "User Login !", token: token});
-            }
-        }
-    });	
+			if(!validPassword){
+				res.status(403).json({ success: false, message: 'Invalid Password !'});
+			}
+			else{
+				console.log("user" + user);
+				var token = tokenMaker.createUserToken(user);
+				res.json({success: true, message: "User Login !", token: token});
+			}
+		}
+	});	
 });
 
 
