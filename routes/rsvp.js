@@ -23,10 +23,11 @@ router.post('/add', function(req, res, next){
 		if(err){
 			console.log("Event save error: " + err);
 			res.json({success: false, error: ""+ err});
-		} else {
+		} 
+		else {
 			res.json({ success: true, message: 'rsvp created !', rsvp: rsvp});
 			console.log("suceessss")
-        }
+		}
 	});
 });
 
@@ -113,7 +114,7 @@ router.get('/cancel/:id', function(req, res, next){
 			res.json({success: true, message: "Rsvp cancel !"});
 		}
 		else{
-		res.json({success: false, message: "Rsvp Not Found cancel !"});	
+			res.json({success: false, message: "Rsvp Not Found cancel !"});	
 		}
 	});	
 });
