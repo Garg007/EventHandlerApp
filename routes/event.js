@@ -160,7 +160,7 @@ router.get('/cancel/:id', function(req, res, next){
 			res.json({success: true, message: "Event Cancel !", event: event});
 		}
 		else{
-		res.json({success: false, message: "Event Not Found Cancel !"});	
+			res.json({success: false, message: "Event Not Found Cancel !"});	
 		}
 	});	
 });
