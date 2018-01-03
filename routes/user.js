@@ -28,7 +28,7 @@ router.post('/', function(req, res, next){
 		else {
 			res.json({ success: true, message: 'user created !', User: user});
 			console.log("suceessss")
-        }
+		}
 	});
 });
 
