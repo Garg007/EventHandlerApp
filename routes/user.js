@@ -53,12 +53,12 @@ router.post('/login', function(req, res, next){
                 res.status(403).json({ success: false, message: 'Invalid Password !'});
             }
             else{
-				console.log("user" + user);
-				var token = tokenMaker.createUserToken(user);
-				res.json({success: true, message: "User Login !", token: token});
-			}
-		}
-	});	
+            	console.log("user" + user);
+            	var token = tokenMaker.createUserToken(user);
+            	res.json({success: true, message: "User Login !", token: token});
+            }
+        }
+    });	
 });
 
 
